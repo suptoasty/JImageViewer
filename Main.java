@@ -1,13 +1,17 @@
-import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-import main.Window;
+import model.*;
+import controller.*;
+import view.*;
 
 public class Main implements Runnable {
 
     // runner thread
     public void run() {
-        Window mainWindow = new Window(640, 480);
+        Controller controller = new Controller();
+        Model model = new Model();
+        View view = new View(controller, model);
+        view.show();
 
     }
 
